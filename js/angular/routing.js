@@ -7,6 +7,12 @@ angular
             templateUrl: 'templates/home.html'
         };
 
+        var gallery = {
+            name: 'gallery',
+            url: '/gallery',
+            templateUrl: 'components/gallery/gallery.html'
+        };
+
         var aboutState = {
             name: 'about',
             url: '/about',
@@ -15,5 +21,6 @@ angular
 
         $urlRouterProvider.when('', '/');
         $stateProvider.state(homeState);
+        $stateProvider.state(gallery);
         $stateProvider.state(aboutState);
     });
