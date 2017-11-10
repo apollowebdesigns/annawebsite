@@ -3,7 +3,14 @@ var gulp = require('gulp'),
     connect = require('gulp-connect');
 
 gulp.task('concat', function() {
-    return gulp.src('./components/**/*.js')
+    gulp.src([
+        './components/init/*.js',
+        './components/app/app.js',
+        './components/routing/routing.js',
+        './components/home/home.js',
+        './components/gallery/*.js',
+        './components/about/about.js'
+    ])
         .pipe(concat('components.js'))
         .pipe(gulp.dest('./dist/'));
 });
