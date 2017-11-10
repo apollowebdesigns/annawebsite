@@ -13,14 +13,16 @@ gulp.task('html', function () {
         .pipe(connect.reload());
 });
 
-gulp.task('componentsjs', function () {
-    gulp.src('./components/**/*.js')
+gulp.task('components', function () {
+    gulp.src('./components/**/*.*')
         .pipe(connect.reload());
 });
 
 gulp.task('watch', function () {
     gulp.watch(['./app/*.html'], ['html']);
-    gulp.watch(['./components/**/*.js'], ['componentsjs']);
+    gulp.watch(['./components/**/*.*'], ['components']);
 });
+
+gulp.task('serve', ['connect', 'watch']);
 
 gulp.task('default', ['connect', 'watch']);
