@@ -1,5 +1,12 @@
 var gulp = require('gulp'),
+    concat = require('gulp-concat'),
     connect = require('gulp-connect');
+
+gulp.task('concat', function() {
+    return gulp.src('./lib/*.js')
+        .pipe(concat('all.js'))
+        .pipe(gulp.dest('./dist/'));
+});
 
 gulp.task('connect', function() {
     connect.server({

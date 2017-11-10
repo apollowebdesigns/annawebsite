@@ -4,7 +4,7 @@ angular
         var homeState = {
             name: 'home',
             url: '/',
-            templateUrl: 'templates/home.html'
+            templateUrl: 'components/home/home.html'
         };
 
         var gallery = {
