@@ -13,8 +13,14 @@ gulp.task('html', function () {
         .pipe(connect.reload());
 });
 
+gulp.task('componentsjs', function () {
+    gulp.src('./components/**/*.js')
+        .pipe(connect.reload());
+});
+
 gulp.task('watch', function () {
     gulp.watch(['./app/*.html'], ['html']);
+    gulp.watch(['./components/**/*.js'], ['componentsjs']);
 });
 
 gulp.task('default', ['connect', 'watch']);
