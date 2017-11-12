@@ -1,6 +1,20 @@
 var gulp = require('gulp'),
+    inject = require('gulp-inject'),
     concat = require('gulp-concat'),
     connect = require('gulp-connect');
+
+
+/**
+ * gulp inject task
+ */
+gulp.task('injectjs', function () {
+    var target = gulp.src('./index.html');
+    // It's not necessary to read the files (will speed up things), we're only after their paths:
+    var sources = gulp.src(['./dist/components.js', './src/**/*.css'], {read: false});
+
+    return target.pipe(inject(sources))
+        .pipe(gulp.dest('./dist'));
+});
 
 gulp.task('concat', function() {
     gulp.src([
