@@ -19,8 +19,15 @@ angular
             templateUrl: 'components/about/about.html'
         };
 
+        var inspiration = {
+            name: 'inspiration',
+            url: '/inspiration',
+            templateUrl: 'components/inspiration/inspiration.html'
+        };
+
         $urlRouterProvider.when('', '/');
         $stateProvider.state(homeState);
         $stateProvider.state(gallery);
         $stateProvider.state(aboutState);
+        $stateProvider.state(inspiration);
     });

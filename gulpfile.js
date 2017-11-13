@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
     inject = require('gulp-inject'),
     concat = require('gulp-concat'),
+    uglify = require('gulp-uglify'),
     connect = require('gulp-connect');
 
 
@@ -23,11 +24,18 @@ gulp.task('concat', function() {
         './components/routing/routing.js',
         './components/home/home.js',
         './components/gallery/*.js',
+        './components/inspiration/*.js',
         './components/about/about.js'
     ])
         .pipe(concat('components.js'))
         .pipe(gulp.dest('./dist/'));
 });
+
+gulp.task('uglify', function () {
+    gulp.src(['./dist/components.js'])
+        .pipe(uglify())
+        .pipe(gulp.dest('./dist/min.js'))
+})
 
 gulp.task('connect', function() {
     connect.server({
@@ -51,6 +59,6 @@ gulp.task('watch', function () {
     gulp.watch(['./components/**/*.*'], ['components']);
 });
 
-gulp.task('serve', ['connect', 'watch']);
+gulp.task('serve', ['connect', 'watch', 'concat']);
 
 gulp.task('default', ['connect', 'watch']);

@@ -12,14 +12,14 @@
   <!-- inject:css -->
   <!-- endinject -->
 </head>
-<body ng-app="app">
+<body ng-app="app" ng-controller="AppController as appCtrl">
   <nav class="white" role="navigation">
     <div class="nav-wrapper container">
       <ul class="right hide-on-med-and-down">
         <li><a ui-sref="home">HOME PAGE</a></li>
         <li><a ui-sref="gallery">GALLERY</a></li>
         <li><a ui-sref="#">NEW WORK</a></li>
-        <li><a ui-sref="#">INSPIRATION</a></li>
+        <li><a ui-sref="inspiration" ng-click="appCtrl.loadStyle()">INSPIRATION</a></li>
         <li><a ui-sref="about">ABOUT</a></li>
         <li><a ui-sref="#">CONTACT</a></li>
         <li><a ui-sref="#">SHOP</a></li>
@@ -29,7 +29,7 @@
         <li><a ui-sref="home">HOME PAGE</a></li>
         <li><a ui-sref="gallery">GALLERY</a></li>
         <li><a ui-sref="#">NEW WORK</a></li>
-        <li><a ui-sref="#">INSPIRATION</a></li>
+        <li><a ui-sref="inspiration">INSPIRATION</a></li>
         <li><a ui-sref="about">ABOUT</a></li>
         <li><a ui-sref="#">CONTACT</a></li>
         <li><a ui-sref="#">SHOP</a></li>
@@ -46,6 +46,7 @@
   <script src="/node_modules/jquery/dist/jquery.min.js"></script>
   <script src="/node_modules/angular/angular.min.js"></script>
   <script src="/node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script src="/dist/components.js"></script>
   <!-- inject:js -->
   <!-- endinject -->
   </body>
