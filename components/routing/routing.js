@@ -25,9 +25,16 @@ angular
             templateUrl: 'components/inspiration/inspiration.html'
         };
 
+        var contact = {
+            name: 'contact',
+            url: '/contact',
+            templateUrl: 'components/contact/contact.html'
+        };
+
         $urlRouterProvider.when('', '/');
         $stateProvider.state(homeState);
         $stateProvider.state(gallery);
         $stateProvider.state(aboutState);
         $stateProvider.state(inspiration);
+        $stateProvider.state(contact);
     });
