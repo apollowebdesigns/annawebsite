@@ -25,7 +25,8 @@ gulp.task('concat', function() {
         './components/home/home.js',
         './components/gallery/*.js',
         './components/inspiration/*.js',
-        './components/about/about.js'
+        './components/about/about.controller.js',
+        './components/contact/contact.controller.js'
     ])
         .pipe(concat('components.js'))
         .pipe(gulp.dest('./dist/'));

@@ -1,0 +1,7 @@
+.has-error {
+    border-bottom: 2px solid #F44336 !important;
+}
+
+.error-text {
+    color: #F44336 !important;
+}
